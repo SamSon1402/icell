@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Print specific styles */
+@media print {
+  @page {
+    margin: 20mm;
+    size: A4;
+  }
+
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .print-break-after {
+    page-break-after: always;
+  }
+
+  .print-break-before {
+    page-break-before: always;
+  }
+
+  .no-break-inside {
+    page-break-inside: avoid;
+  }
+}
+
+/* Form specific styles */
+input:focus, 
+select:focus, 
+textarea:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: -1px;
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+}
+
+/* Custom utility classes */
+.shadow-hover {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.shadow-hover:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Error state styles */
+.input-error {
+  border-color: #ef4444;
+}
+
+.input-error:focus {
+  outline-color: #ef4444;
+}
+
+/* Success state styles */
+.input-success {
+  border-color: #22c55e;
+}
+
+.input-success:focus {
+  outline-color: #22c55e;
+}
